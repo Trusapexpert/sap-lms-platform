@@ -1,1 +1,12 @@
+<input id="name">
+<input id="amount">
+<button onclick="gen()">Generate</button>
 
+<div id="inv"></div>
+
+<script>
+function gen(){
+document.getElementById("inv").innerHTML=
+"Invoice for "+name.value+" ₹"+amount.value;
+}
+</script>
