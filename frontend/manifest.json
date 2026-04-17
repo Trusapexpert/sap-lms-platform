@@ -1,1 +1,6 @@
-
+{
+"name":"SAP Training",
+"short_name":"SAP",
+"display":"standalone",
+"start_url":"/"
+}
