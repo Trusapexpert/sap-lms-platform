@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Best SAP Online Training</title>
 
+<meta name="description"
+content="Best SAP online training with placement">
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Best SAP Online Training</h1>
+
+<a href="login.html">Login</a>
+<a href="course.html">Courses</a>
+
+<button onclick="pay()">Enroll Now</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+function pay(){
+var options={
+key:"YOUR_KEY",
+amount:"299900",
+currency:"INR",
+name:"SAP Training"
+};
+new Razorpay(options).open();
+}
+</script>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/919999999999"
+class="whatsapp">💬</a>
+
+<!-- Chatbot -->
+<script>
+window.chatbaseConfig={chatbotId:"YOUR_ID"}
+</script>
+<script src="https://www.chatbase.co/embed.min.js" defer></script>
+
+</body>
+</html>
