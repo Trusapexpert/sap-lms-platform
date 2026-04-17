@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Admin Dashboard</title>
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<h1>Admin Panel</h1>
-<div class="card">Total Students: 120</div>
-<div class="card">Revenue: ₹2,50,000</div>
-<table>
-<tr><th>Name</th><th>Course</th></tr>
-<tr><td>Rahul</td><td>SAP Finance</td></tr>
-</table>
-</body>
-</html>
+<h2>Analytics Dashboard</h2>
+
+<div class="card">
+Total Students: <span id="students"></span>
+</div>
+
+<div class="card">
+Total Courses: 5
+</div>
+
+<div class="card">
+Completion Rate: 78%
+</div>
+
+<script>
+fetch("http://localhost:3000/users")
+.then(res=>res.json())
+.then(data=>{
+document.getElementById("students").innerText=data.length;
+});
+</script>
