@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAP Course Player</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
 
+<body>
+
+<h2>SAP Training Videos</h2>
+
+<video id="player" width="800" controls>
+<source src="videos/intro.mp4" type="video/mp4">
+</video>
+
+<h3>Modules</h3>
+<ul>
+<li onclick="playVideo('videos/intro.mp4')">Introduction</li>
+<li onclick="playVideo('videos/finance.mp4')">S/4HANA Finance</li>
+<li onclick="playVideo('videos/scm.mp4')">Supply Chain</li>
+<li onclick="playVideo('videos/hcm.mp4')">HCM</li>
+</ul>
+
+<button onclick="markComplete()">Mark Complete</button>
+
+<script>
+function playVideo(src){
+document.getElementById("player").src = src;
+}
+
+function markComplete(){
+fetch("http://localhost:3000/progress",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+user_id:1,
+course:"SAP",
+lesson:"Video",
+completed:1
+})
+});
+alert("Progress Saved");
+}
+</script>
+
+</body>
+</html>
